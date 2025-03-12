@@ -416,6 +416,10 @@ input[type="number"] {
     main {
         flex-direction: column;
         align-items: center;
+        input::placeholder,
+        select::placeholder {
+            font-size: 10px; 
+        }
     }
 }
 
