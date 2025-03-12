@@ -27,6 +27,12 @@ image_model = load_model("./public/modelo_img/mejor_modelo_clima_v2.h5")
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "result": -1})
 
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Usa el puerto de Railway o 8000 por defecto
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
 #predecccion mediante formulario
 @app.post("/predict")
 async def predict(
